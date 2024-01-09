@@ -23,10 +23,17 @@ function emptyTask() {
 };
 
 function doneTask(event) {
-    if (event.target.tagName === "LI") {
+    if (event.target.tagName === "LI") { // tag name in DOM always returns on canonical uppercase
         event.target.classList.toggle("done");
+    }
+};
+
+function deleteTask(event) {
+    if (event.target.tagName === "BUTTON") {
+        event.target.parentElement.remove();
     }
 };
 
 addBtn.addEventListener("click", emptyTask);
 ul.addEventListener("click", doneTask);
+ul.addEventListener("click", deleteTask);
