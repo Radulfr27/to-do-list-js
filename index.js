@@ -1,4 +1,4 @@
-const ul = document.querySelector("#ul");
+const ul = document.querySelector("ul");
 const taskInput = document.querySelector("#taskInput");
 const addBtn = document.querySelector("#addBtn");
 
@@ -22,6 +22,11 @@ function emptyTask() {
     }
 };
 
-
+function doneTask(event) {
+    if (event.target.tagName === "LI") {
+        event.target.classList.toggle("done");
+    }
+};
 
 addBtn.addEventListener("click", emptyTask);
+ul.addEventListener("click", doneTask);
