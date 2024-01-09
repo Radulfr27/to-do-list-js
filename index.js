@@ -34,6 +34,13 @@ function deleteTask(event) {
     }
 };
 
+function enterPressTask(event) {
+    if (event.key === "Enter") {
+        emptyTask();
+    }
+};
+
 addBtn.addEventListener("click", emptyTask);
+taskInput.addEventListener("keypress", enterPressTask);
 ul.addEventListener("click", doneTask);
 ul.addEventListener("click", deleteTask);
